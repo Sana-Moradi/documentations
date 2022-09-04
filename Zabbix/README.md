@@ -32,11 +32,11 @@ systemctl status mariadb
 # 4. Create initial database
 
 ```bash
-sudo mysql -uroot -p'VASLPass@123456' -e "create database zabbix character set utf8mb4 collate utf8mb4_bin;"
+sudo mysql -uroot -p'Pass@123456' -e "create database zabbix character set utf8mb4 collate utf8mb4_bin;"
 
-sudo mysql -uroot -p'VASLPass@123456' -e "grant all privileges on zabbix.* to zabbix@localhost identified by 'VASLPass@123456';"
+sudo mysql -uroot -p'Pass@123456' -e "grant all privileges on zabbix.* to zabbix@localhost identified by 'Pass@123456';"
 
-sudo zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p'VASLPass@123456' zabbix
+sudo zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p'Pass@123456' zabbix
 ```
 
 ```bash
@@ -51,7 +51,7 @@ mysql> quit;
 ```bash
 vi /etc/zabbix/zabbix_server.conf
 
-DBPassword=VASLPass@123456
+DBPassword=Pass@123456
 ```
 
 # 6. Start Zabbix server and agent processes
